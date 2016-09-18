@@ -2,7 +2,7 @@
   "name": "pwa-demo",
   "version": "1.0.0",
   "description": "PWA demo for WebExpo 2016",
-  "main": "app/scripts/main.js",
+  "main": "app/js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/Janamou/pwa-demo/issues"
   },
-  "homepage": "https://github.com/Janamou/pwa-demo#readme",
-  "devDependencies": {
-    "sw-precache": "^4.0.0"
-  }
+  "homepage": "https://github.com/Janamou/pwa-demo#readme"
 }
