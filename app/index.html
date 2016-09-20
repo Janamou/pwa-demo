@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Progressive Web Apps demo for WebExpo 2016">
@@ -38,69 +38,56 @@
 
     <!-- Your css -->
     <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
+</head>
+<body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">PWAs rock on Github!</span>
-          <div class="mdl-layout-spacer"></div>
-          <nav class="mdl-navigation">
-            <a class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect" href="#">
-              <i class="material-icons">refresh</i>
-            </a>
-          </nav>
+            <span class="mdl-layout-title">PWAs rock on Github!</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect"
+                   id="refresh">
+                    <i class="material-icons">refresh</i>
+                </button>
+            </nav>
         </div>
-      </header>
-      <main class="mdl-layout__content">
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-          <div class="mdl-card mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__supporting-text">
-              <h4>awesome-pwa</h4>
-              Awesome list of progressive web apps! (PR welcomed ;))
-            </div>
-            <div class="mdl-card__actions">
-              <a href="#" class="mdl-button">Show me repo</a>
-            </div>
-          </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons">more_vert</i>
-            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-          <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
-            <li class="mdl-menu__item" tabindex="-1">Lorem</li>
-            <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
-            <li class="mdl-menu__item" tabindex="-1">Dolor</li>
-          </ul></div>
-        </section>
-
+    </header>
+    <main class="mdl-layout__content">
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner"></div>
+        <div id="content">
+        </div>
         <footer class="mdl-mini-footer">
-          <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Jana Moudrá</div>
-            <ul class="mdl-mini-footer__link-list">
-              <li><a href="https://twitter.com/Janamou">@Janamou</a></li>
-              <li><a href="https://plus.google.com/+JanaMoudr%C3%A1">+Jana Moudra</a></li>
-              <li><a href="https://github.com/Janamou/">Github</a></li>
-              <li><a href="http://www.moudra.net/">moudra.net</a></li>
-            </ul>
-          </div>
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">Jana Moudrá</div>
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="https://twitter.com/Janamou">@Janamou</a></li>
+                    <li><a href="https://plus.google.com/+JanaMoudr%C3%A1">+Jana Moudra</a></li>
+                    <li><a href="https://github.com/Janamou/">Github</a></li>
+                    <li><a href="http://www.moudra.net/">moudra.net</a></li>
+                </ul>
+            </div>
         </footer>
-      </main>
+    </main>
+</div>
+<section id="card-template" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="display: none">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+            <h4></h4>
+            <p></p>
+        </div>
+        <div class="mdl-card__actions">
+            <a href="#" class="mdl-button" target="_blank"><i class="material-icons">link</i> Show me the repo</a>
+        </div>
+        <ul class="mdl-card__metadata">
+            <li class="mdl-card__metadata-stars"><i class="material-icons">star</i><span></span></li>
+            <li class="mdl-card__metadata-watchers"><i class="material-icons">visibility</i><span></span></li>
+            <li class="mdl-card__metadata-forks"><i class="material-icons">call_split</i><span></span></li>
+        </ul>
     </div>
+</section>
 
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-    <!-- build:js js/main.min.js -->
-    <script src="js/main.js"></script>
-    <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <!-- Built with love using Web Starter Kit -->
-  </body>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>

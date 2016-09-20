@@ -1,44 +1,81 @@
-.mdl-demo section.section--center {
-  max-width: 860px;
-  margin-bottom: 48px;
-  position: relative;
+.mdl-layout__header-row {
+    padding-left: 40px;
 }
-.mdl-demo .mdl-card {
-  height: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+
+.mdl-layout__header-row .mdl-navigation {
+    margin-top: 60px;
 }
-.mdl-demo .mdl-card > * {
-  height: auto;
+
+.mdl-layout__content {
+    text-align: center;
 }
-.mdl-demo .mdl-card__actions {
-  margin: 0;
-  padding: 4px 40px;
-  color: inherit;
+
+#content {
+    min-height: 600px;
 }
-.mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
-  margin-top: 0;
-  margin-bottom: 20px;
+
+#content section, .mdl-mini-footer {
+    text-align: left;
 }
-.mdl-demo .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding: 0;
-  color: inherit;
-  width: calc(100% - 80px);
+
+.mdl-spinner {
+    margin-top: 5px;
 }
-.mdl-demo .mdl-card__supporting-text + .mdl-card__actions {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+section.section--center {
+    max-width: 860px;
+    margin-bottom: 48px;
+    position: relative;
 }
-.mdl-demo section > button {
-  position: absolute;
-  z-index: 99;
-  top: 8px;
-  right: 8px;
+
+.mdl-card__actions {
+    margin: 0;
+    padding: 4px 40px;
+}
+
+.mdl-card__actions .mdl-button {
+    color: rgb(83, 109, 254);
+
+}
+
+.mdl-card__supporting-text h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.mdl-card__supporting-text {
+    margin: 40px;
+    padding: 0;
+    color: inherit;
+    width: calc(100% - 80px);
+}
+
+.mdl-card__supporting-text + .mdl-card__actions {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mdl-card__metadata {
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    right: 40px;
+    z-index: 10;
+}
+
+.mdl-card__metadata li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.mdl-card__metadata i {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.mdl-card__metadata span {
+    color: #9e9e9e;
+}
+
+.not-available {
+    font-style: italic;
 }
