@@ -9,7 +9,7 @@ var files = [
     "/index.html",
     "/css/icon.css",
     "/css/main.css",
-    "/css/material.indigo-pink.min.css",
+    "/css/material.min.css",
     "/js/main.js"
 ];
 
