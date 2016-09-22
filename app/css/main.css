@@ -46,6 +46,10 @@ section.section--center {
 .mdl-card__supporting-text h4 {
     margin: 0 0 20px;
     font-size: 20px;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .mdl-card__supporting-text {
