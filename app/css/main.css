@@ -11,7 +11,7 @@
 }
 
 #content {
-    min-height: 600px;
+    margin: 0 10px;
 }
 
 #content section, .mdl-mini-footer {
@@ -23,14 +23,18 @@
 }
 
 section.section--center {
-    max-width: 860px;
+    max-width: 800px;
     margin-bottom: 48px;
     position: relative;
 }
 
+.mdl-card {
+    min-height: 160px;
+}
+
 .mdl-card__actions {
     margin: 0;
-    padding: 4px 40px;
+    padding: 4px 20px;
 }
 
 .mdl-card__actions .mdl-button {
@@ -39,12 +43,12 @@ section.section--center {
 }
 
 .mdl-card__supporting-text h4 {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+    font-size: 22px;
 }
 
 .mdl-card__supporting-text {
-    margin: 40px;
+    margin: 20px;
     padding: 0;
     color: inherit;
     width: calc(100% - 80px);
@@ -57,8 +61,8 @@ section.section--center {
 .mdl-card__metadata {
     margin: 0;
     position: absolute;
-    top: 45px;
-    right: 40px;
+    top: 25px;
+    right: 20px;
     z-index: 10;
 }
 
@@ -78,4 +82,18 @@ section.section--center {
 
 .not-available {
     font-style: italic;
+}
+
+.mdl-card__metadata-watchers {
+    display: none !important;
+}
+
+.mdl-logo {
+    margin-bottom: 5px;
+}
+
+@media all and (min-width: 768px) {
+    #content {
+         min-height: 600px;
+     }
 }
