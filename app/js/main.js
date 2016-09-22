@@ -26,7 +26,7 @@
         this.container = document.getElementById("content");
         this.cardTemplate = document.getElementById("card-template");
         this.refresh = document.getElementById("refresh");
-        this.refresh.addEventListener("click", function() {
+        this.refresh.addEventListener("click", function () {
             this.loadData();
         }.bind(this));
 
@@ -44,7 +44,7 @@
 
         var that = this;
         var request = new XMLHttpRequest();
-        request.onreadystatechange = function() {
+        request.onreadystatechange = function () {
             if (request.readyState === XMLHttpRequest.DONE) {
                 if (this.status == 200) {
                     that.showData(JSON.parse(this.responseText));
@@ -57,15 +57,18 @@
         request.send();
     };
 
-    App.prototype.loadFromCache = function() {
+    App.prototype.loadFromCache = function () {
         var that = this;
 
         if ("caches" in window) {
-            caches.match(this.url).then(function(response) {
+            caches.match(this.url).then(function (response) {
                 if (response) {
-                    response.json().then(function(json) {
+                    response.json().then(function (json) {
                         that.showData(json);
                     });
+                } else {
+                    that.spinner.classList.remove("is-active");
+                    that.container.textContent = "So empty :-(";
                 }
             });
         }
