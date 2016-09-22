@@ -3,7 +3,6 @@ var cacheName = "pwa-shell";
 var contentCacheName = "pwa-content";
 
 // Files to cache.
-// TODO add images
 // TODO think about something smarter for fonts
 var files = [
     "/",
