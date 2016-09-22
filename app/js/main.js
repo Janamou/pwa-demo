@@ -26,10 +26,9 @@
         this.container = document.getElementById("content");
         this.cardTemplate = document.getElementById("card-template");
         this.refresh = document.getElementById("refresh");
-        this.refresh.addEventListener("click", e => {
-            this.clearAll();
+        this.refresh.addEventListener("click", function() {
             this.loadData();
-        });
+        }.bind(this));
 
         this.spinner = document.querySelector(".mdl-spinner");
     }
@@ -39,9 +38,9 @@
 
         // Hotfix. When the first fetch is so early, the data is not cached.
         if (!first) {
-            setTimeout(() => {
+            setTimeout(function() {
                 this.loadData();
-            }, 1000);
+            }.bind(this), 1000);
             localStorage.setItem("demo_loaded", true);
         } else {
             this.loadData();
@@ -52,24 +51,29 @@
         //setTimeout(function() {
         var url = "https://api.github.com/search/repositories?q=pwa&sort=stars";
         this.spinner.classList.add("is-active");
+        this.clearAll();
 
-        var request = new Request(url);
-        fetch(request).then(response => {
-            response.json().then(json => {
-                this.showData(json);
-            });
-        }).catch(e => {
-            if ("caches" in window) {
-                caches.match(url).then(response => {
-                    if (response) {
-                        response.json().then(json => {
-                            this.showData(json);
+        var that = this;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                if (this.status == 200) {
+                    that.showData(JSON.parse(this.responseText));
+                } else {
+                    if ("caches" in window) {
+                        caches.match(url).then(function(response) {
+                            if (response) {
+                                response.json().then(function(json) {
+                                    that.showData(json);
+                                });
+                            }
                         });
                     }
-                });
+                }
             }
-        });
-        //}, 1000);
+        };
+        request.open("GET", url, true);
+        request.send();
     };
 
     App.prototype.showData = function (data) {
