@@ -31,6 +31,7 @@
         }.bind(this));
 
         this.spinner = document.querySelector(".mdl-spinner");
+        this.url = "https://api.github.com/search/repositories?q=pwa&sort=stars";
     }
 
     App.prototype.init = function () {
@@ -49,7 +50,6 @@
 
     App.prototype.loadData = function () {
         //setTimeout(function() {
-        var url = "https://api.github.com/search/repositories?q=pwa&sort=stars";
         this.spinner.classList.add("is-active");
         this.clearAll();
 
@@ -60,20 +60,26 @@
                 if (this.status == 200) {
                     that.showData(JSON.parse(this.responseText));
                 } else {
-                    if ("caches" in window) {
-                        caches.match(url).then(function(response) {
-                            if (response) {
-                                response.json().then(function(json) {
-                                    that.showData(json);
-                                });
-                            }
-                        });
-                    }
+                    that.loadFromCache();
                 }
             }
         };
-        request.open("GET", url, true);
+        request.open("GET", this.url, true);
         request.send();
+    };
+
+    App.prototype.loadFromCache = function() {
+        var that = this;
+        
+        if ("caches" in window) {
+            caches.match(this.url).then(function(response) {
+                if (response) {
+                    response.json().then(function(json) {
+                        that.showData(json);
+                    });
+                }
+            });
+        }
     };
 
     App.prototype.showData = function (data) {
