@@ -4,13 +4,19 @@ var contentCacheName = "pwa-content";
 
 // Files to cache.
 // TODO add images
+// TODO think about something smarter for fonts
 var files = [
     "/",
     "/index.html",
     "/css/icon.css",
     "/css/main.css",
     "/css/material.min.css",
-    "/js/main.js"
+    "/js/main.js",
+    "/css/fonts/MaterialIcons-Regular.eot",
+    "/css/fonts/MaterialIcons-Regular.woff2",
+    "/css/fonts/MaterialIcons-Regular.woff",
+    "/css/fonts/MaterialIcons-Regular.ttf",
+    "/css/fonts/MaterialIcons-Regular.svg"
 ];
 
 // Install event. Caches all the data for the App shell.
