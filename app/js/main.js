@@ -35,7 +35,17 @@
     }
 
     App.prototype.init = function () {
-        this.loadData();
+        var first = localStorage.getItem("demo_loaded");
+
+        // Hotfix. When the first fetch is so early, the data is not cached.
+        if (!first) {
+            setTimeout(() => {
+                this.loadData();
+            }, 1000);
+            localStorage.setItem("demo_loaded", true);
+        } else {
+            this.loadData();
+        }
     };
 
     App.prototype.loadData = function () {
