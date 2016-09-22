@@ -40,7 +40,7 @@
 
     App.prototype.loadData = function () {
         //setTimeout(function() {
-        var url = "https://api.github.com/search/repositories?q=pwa";
+        var url = "https://api.github.com/search/repositories?q=pwa&sort=stars";
         this.spinner.classList.add("is-active");
 
         var request = new Request(url);

@@ -11,6 +11,7 @@
 }
 
 #content {
+    min-height: 200px;
     margin: 0 10px;
 }
 
@@ -44,7 +45,7 @@ section.section--center {
 
 .mdl-card__supporting-text h4 {
     margin: 0 0 20px;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .mdl-card__supporting-text {
